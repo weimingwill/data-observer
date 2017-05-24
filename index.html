@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="dist/data-observer.js"></script>
+  <title>Data Observer</title>
+</head>
+<body>
+<script>
+	let Observer = dataObserver.dataObserver;
+
+	let callback = function(val) {
+		alert('Value is changed ' + val)
+	}
+
+	let data = {
+	  a: 'a',
+	  l1: {
+	  	b: 'b',
+	  	l2: {
+	  		c: 'c'
+	  	}
+	  }
+	}
+
+	let observer = new Observer(data, callback)
+
+	data.a = 'changed A';
+	data.l1.b = 'chnaged B';
+	data.l1.l2.c = 'changed C';
+</script>
+</body>
+</html>
