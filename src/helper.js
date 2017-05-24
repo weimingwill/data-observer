@@ -4,3 +4,10 @@ export function isPlainObject (obj) {
 	}
 	return true;
 }
+
+export function isPlainArray(array) {
+	if (Object.prototype.toString.call(array) !== '[object Array]') {
+		return false;
+	}
+	return true;
+}
