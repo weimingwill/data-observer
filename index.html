@@ -9,8 +9,8 @@
 <script>
 	let Observer = dataObserver.dataObserver;
 
-	let callback = function(newVal, oldVal) {
-		alert('Value is changed.\noldVal: ' + oldVal + "\nnewVal: " + newVal);
+	let callback = function(newVal, oldVal, path) {
+		alert('Value is changed.\noldVal: ' + oldVal + "\nnewVal: " + newVal + "\npath: " + path);
 	}
 
 	let data = {
@@ -19,7 +19,7 @@
 	  	b: 'b',
 	  	l2: {
 	  		c: 'c'
-	  	}
+	  	},
 	  },
 	  d: [1, 2, 3]
 	}
@@ -30,7 +30,6 @@
 	data.l1.b = 'chnaged B';
 	data.l1.l2.c = 'changed C';
 	data.d.push(4);
-	data.d.pop();
 </script>
 </body>
 </html>
